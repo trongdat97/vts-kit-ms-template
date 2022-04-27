@@ -1,0 +1,3 @@
+ms-config:
+  exampleValue: ${MS-CONFIG-VALUE-EXAMPLE}
+  exampleSecure: ${MS-CONFIG-SECURE-EXAMPLE}

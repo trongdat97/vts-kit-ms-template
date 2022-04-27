@@ -1,0 +1,3 @@
+ms-config:
+  exampleValue: Example Value
+  exampleSecure: sensitive_value
