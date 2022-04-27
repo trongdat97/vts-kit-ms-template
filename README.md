@@ -21,7 +21,7 @@ Addition feature:
 * [Integration Keycloak Auth](https://github.com/vts-contributor/vts-kit-ms-keycloak-auth.git)
 * [Integration Kafka](https://github.com/vts-contributor/vts-kit-ms-kafka-integrated.git)
 * [Integration Elasticsearch](https://github.com/vts-contributor/vts-kit-ms-elasticsearch-data.git)
-* [Integration Kong Ingress](#://github.com/vts-contributor/vts-kit-ms-kong-gateway.git)
+* [Integration Kong Ingress](//github.com/vts-contributor/vts-kit-ms-kong-gateway.git)
 * [Excel Handler Utility](https://github.com/vts-contributor/vts-kit-ms-excel-handler.git)
 * [Redis Caching](https://github.com/vts-contributor/vts-kit-ms-redis-cache.git)
 
@@ -63,13 +63,13 @@ mvn clean package -DskipTests
 
 Usage
 -------
-#### Code Structure
+### Code Structure
 
 This Template Generated Code Structure base on MVC Pattern
 
 ![Screenshot](screenshots/Capture04.PNG)
 
-#### Example API
+### Example API
 Example API with CRUD operation auto generated for testing
 
 ```java
@@ -120,13 +120,13 @@ public class BookController extends AbstractRestController {
 }
 ```
 
-#### API Docs
+### API Docs
 
 This Template Built-in supported Open API docs base on [Swagger OAS] (https://swagger.io/specification/)
 
 API Docs Auto Generated at URL: `http://localhost:8080/<artifactId>/api-docs`
 
-#### Internationalization
+### Internationalization
 
 By default, This Template built-in supported Internationalization with 2 language: English and Vietnamese.\
 Language auto resolve by Request Header `Accept-Language`
@@ -148,10 +148,10 @@ msg.error.notFound=Không tìm thấy thông tin
 String message = InternationalizationUtils.getMessage("msg.error.notFound")
 ```
 
-#### Prometheus metrics
+### Prometheus metrics
 This Template built-in supported by `spring-boot-starter-aop` for monitoring.
 
-#### Mapper
+### Mapper
 By supported [Mapstruct](https://mapstruct.org/) built-in. Mapper binding become easy and quickly
 
 ```java
@@ -161,7 +161,7 @@ public interface BookMapper extends IMapper<Book, BookDTO> {
 }
 ```
 
-#### Lombok
+### Lombok
 With Lombok, Getter or Setter Auto generated
 ```java
 @Data
@@ -177,7 +177,7 @@ public class BookDTO {
 
 ```
 
-#### Validation
+### Validation
 Use annotation for define validation. Refer [Javax Validation Constraints](https://docs.jboss.org/hibernate/beanvalidation/spec/2.0/api/javax/validation/constraints/package-summary.html).
 
 Internationalization message built-in supported. Define on `validation_en.properties` and `validation_vi.properties`
