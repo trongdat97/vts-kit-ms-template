@@ -37,6 +37,12 @@ under the License.
     <fileSet filtered="true" packaged="false">
       <directory>src/test/resources</directory>
     </fileSet>
+    <fileSet encoding="UTF-8" filtered="true">
+      <directory></directory>
+      <includes>
+        <include>README.md</include>
+      </includes>
+    </fileSet>
   </fileSets>
 
 </archetype-descriptor>
