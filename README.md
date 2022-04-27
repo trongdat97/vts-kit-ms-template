@@ -15,23 +15,23 @@ Built-in Feature:
 * [Common Exception Handling ](#exception-handler)
 
 Addition feature:
-* [Integration Maria DB](#https://github.com/vts-contributor/vts-kit-ms-maria-data.git)
-* [Integration Mongo DB](#https://github.com/vts-contributor/vts-kit-ms-mongo-data.git)
-* [Integration MinIO](#https://github.com/vts-contributor/vts-kit-ms-minio-integrated.git)
-* [Integration Keycloak Auth](#https://github.com/vts-contributor/vts-kit-ms-keycloak-auth.git)
-* [Integration Kafka](#https://github.com/vts-contributor/vts-kit-ms-kafka-integrated.git)
-* [Integration Elasticsearch](#https://github.com/vts-contributor/vts-kit-ms-elasticsearch-data.git)
-* [Integration Kong Ingress](#https://github.com/vts-contributor/vts-kit-ms-kong-gateway.git)
-* [Excel Handler Utility](#https://github.com/vts-contributor/vts-kit-ms-excel-handler.git)
-* [Redis Caching](#https://github.com/vts-contributor/vts-kit-ms-redis-cache.git)
+* [Integration Maria DB](https://github.com/vts-contributor/vts-kit-ms-maria-data.git)
+* [Integration Mongo DB](https://github.com/vts-contributor/vts-kit-ms-mongo-data.git)
+* [Integration MinIO](https://github.com/vts-contributor/vts-kit-ms-minio-integrated.git)
+* [Integration Keycloak Auth](https://github.com/vts-contributor/vts-kit-ms-keycloak-auth.git)
+* [Integration Kafka](https://github.com/vts-contributor/vts-kit-ms-kafka-integrated.git)
+* [Integration Elasticsearch](https://github.com/vts-contributor/vts-kit-ms-elasticsearch-data.git)
+* [Integration Kong Ingress](#://github.com/vts-contributor/vts-kit-ms-kong-gateway.git)
+* [Excel Handler Utility](https://github.com/vts-contributor/vts-kit-ms-excel-handler.git)
+* [Redis Caching](https://github.com/vts-contributor/vts-kit-ms-redis-cache.git)
 
-Requirement 
+Requirement
 -------
 * JDK >= 1.8
 * Maven >= 3.6.3
 * IDE: Eclipse or Intellij IDEA
 
-Quick start 
+Quick start
 -------
 * Create your new project from this template
 ```shell script
@@ -58,18 +58,18 @@ mvn clean package -DskipTests
 * Call Example API
 
 `curl --location --request GET 'http://localhost:8080/<artifactId>/book/view/getListBook' --header 'Accept: */*'`
- 
+
 ![Screenshot](screenshots/Capture03.PNG)
 
 Usage
 -------
-##### Code Structure
+#### Code Structure
 
 This Template Generated Code Structure base on MVC Pattern
 
 ![Screenshot](screenshots/Capture04.PNG)
 
-##### Example API
+#### Example API
 Example API with CRUD operation auto generated for testing
 
 ```java
@@ -120,16 +120,16 @@ public class BookController extends AbstractRestController {
 }
 ```
 
-##### API Docs
+#### API Docs
 
 This Template Built-in supported Open API docs base on [Swagger OAS] (https://swagger.io/specification/)
 
 API Docs Auto Generated at URL: `http://localhost:8080/<artifactId>/api-docs`
 
-##### Internationalization
+#### Internationalization
 
 By default, This Template built-in supported Internationalization with 2 language: English and Vietnamese.\
-Language auto resolve by Request Header `Accept-Language` 
+Language auto resolve by Request Header `Accept-Language`
 
 * First, define message on `messages_en.properties` and `messages_vi.properties` file.
 
@@ -148,10 +148,10 @@ msg.error.notFound=Không tìm thấy thông tin
 String message = InternationalizationUtils.getMessage("msg.error.notFound")
 ```
 
-##### Prometheus metrics
-This Template built-in supported 
+#### Prometheus metrics
+This Template built-in supported by `spring-boot-starter-aop` for monitoring.
 
-##### Mapper
+#### Mapper
 By supported [Mapstruct](https://mapstruct.org/) built-in. Mapper binding become easy and quickly
 
 ```java
@@ -161,7 +161,7 @@ public interface BookMapper extends IMapper<Book, BookDTO> {
 }
 ```
 
-##### Lombok
+#### Lombok
 With Lombok, Getter or Setter Auto generated
 ```java
 @Data
@@ -177,7 +177,7 @@ public class BookDTO {
 
 ```
 
-##### Validation
+#### Validation
 Use annotation for define validation. Refer [Javax Validation Constraints](https://docs.jboss.org/hibernate/beanvalidation/spec/2.0/api/javax/validation/constraints/package-summary.html).
 
 Internationalization message built-in supported. Define on `validation_en.properties` and `validation_vi.properties`
@@ -212,8 +212,7 @@ public class BookDTO {
 }
 ```
 
-
-#### Exception handler
+### Exception handler
 All Exception errors are handled centrally at `ExceptionHandler` for easy management and maintenance
 ```java
 @ControllerAdvice
