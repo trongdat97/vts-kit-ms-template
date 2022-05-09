@@ -33,7 +33,7 @@ Requirement
 
 Quick start
 -------
-* Create your new project from this template
+* Run this script to create new project from this template
 ```shell script
 mvn archetype:generate -DarchetypeGroupId=com.atviettelsolutions -DarchetypeArtifactId=vts-kit-ms-template -DarchetypeVersion=1.0.1
 ```
