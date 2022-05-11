@@ -6,7 +6,7 @@
 
   <groupId>com.atviettelsolutions</groupId>
   <artifactId>vts-kit-ms-template</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.2</version>
   <packaging>maven-archetype</packaging>
   <name>vts-kit-ms-template</name>
 
