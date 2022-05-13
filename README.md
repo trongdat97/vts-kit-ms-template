@@ -122,7 +122,7 @@ public class BookController extends AbstractRestController {
 
 ### API Docs
 
-This Template Built-in supported Open API docs base on [Swagger OAS] (https://swagger.io/specification/)
+This Template Built-in supported Open API docs base on [Swagger OAS](https://swagger.io/specification/)
 
 API Docs Auto Generated at URL: `http://localhost:8080/<artifactId>/api-docs`
 
