@@ -67,6 +67,11 @@
       <artifactId>vts-kit-ms-core-lib</artifactId>
       <version>1.0.2</version>
     </dependency>
+    <dependency>
+      <groupId>com.atviettelsolutions</groupId>
+      <artifactId>vts-kit-ms-logs-handler</artifactId>
+      <version>1.0.1</version>
+    </dependency>
   </dependencies>
 
   <build>

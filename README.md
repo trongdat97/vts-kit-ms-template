@@ -225,25 +225,21 @@ public class ExceptionHandler extends AbstractExceptionHandler {
 
     @Override
     protected ResponseEntity<ErrorDTO> handleCommonException(Exception ex) {
-        ex.printStackTrace();
         return super.handleCommonException(ex);
     }
 
     @Override
     protected ResponseEntity<ErrorDTO> handleMethodArgumentException(MethodArgumentNotValidException ex) {
-        ex.printStackTrace();
         return super.handleMethodArgumentException(ex);
     }
 
     @Override
     protected ResponseEntity<ErrorDTO> handleConstraintViolationException(ConstraintViolationException ex) {
-        ex.printStackTrace();
         return super.handleConstraintViolationException(ex);
     }
 
     @Override
     protected ResponseEntity<ErrorDTO> handleMissingPartException(Exception ex) {
-        ex.printStackTrace();
         return super.handleMissingPartException(ex);
     }
 }

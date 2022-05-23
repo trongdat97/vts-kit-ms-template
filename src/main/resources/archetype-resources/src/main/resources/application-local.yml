@@ -1,3 +1,7 @@
-ms-config:
-  exampleValue: Example Value
-  exampleSecure: sensitive_value
+vtskit:
+  logs:
+    level: INFO # Optional. Default is INFO
+    kpi-logs:
+      application-code: MY-APPLICATION # Optional. Default ApplicationCode value
+      service-code: ${spring.application.name} # Optional. Default ServiceCode value
+      allow-url-patterns: /**

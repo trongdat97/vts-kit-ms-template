@@ -30,43 +30,13 @@ Requirement
 * Maven >= 3.6.3
 * IDE: Eclipse or Intellij IDEA
 
-Quick start
--------
-* Create your new project from this template
-```shell script
-mvn archetype:generate -DarchetypeGroupId=com.atviettelsolutions -DarchetypeArtifactId=vts-kit-ms-template -DarchetypeVersion=1.0.0
-```
-
-* Enter your project infomation (groupId, artifactId, package,...)
-
-![Screenshot](screenshots/Capture01.PNG)
-
-* Build Generated Project.
-```shell script
-mvn clean package
-# Skip Unittest
-mvn clean package -DskipTests
-```
-
-* Import Open API Docs URL To Testing Tool (Ex: Postman)
-
-`http://localhost:8080/<artifactId>/api-docs`
-
-![Screenshot](screenshots/Capture02.PNG)
-
-* Call Example API
-
-`curl --location --request GET 'http://localhost:8080/<artifactId>/book/view/getListBook' --header 'Accept: */*'`
-
-![Screenshot](screenshots/Capture03.PNG)
-
 Usage
 -------
 ### Code Structure
 
 This Template Generated Code Structure base on MVC Pattern
 
-![Screenshot](screenshots/Capture04.PNG)
+![Screenshot](https://raw.githubusercontent.com/vts-contributor/vts-kit-ms-template/main/screenshots/Capture04.PNG)
 
 ### Example API
 Example API with CRUD operation auto generated for testing
@@ -148,7 +118,9 @@ String message = InternationalizationUtils.getMessage("msg.error.notFound")
 ```
 
 ### Prometheus metrics
-This Template built-in supported by `spring-boot-starter-aop` for monitoring.
+This Template built-in supported by `spring-boot-starter-actuator` for monitoring.
+
+`http://localhost:8080/<artifactId>/actuator/prometheus`
 
 ### Mapper
 By supported [Mapstruct](https://mapstruct.org/) built-in. Mapper binding become easy and quickly
@@ -224,25 +196,21 @@ public class ExceptionHandler extends AbstractExceptionHandler {
 
     @Override
     protected ResponseEntity<ErrorDTO> handleCommonException(Exception ex) {
-        ex.printStackTrace();
         return super.handleCommonException(ex);
     }
 
     @Override
     protected ResponseEntity<ErrorDTO> handleMethodArgumentException(MethodArgumentNotValidException ex) {
-        ex.printStackTrace();
         return super.handleMethodArgumentException(ex);
     }
 
     @Override
     protected ResponseEntity<ErrorDTO> handleConstraintViolationException(ConstraintViolationException ex) {
-        ex.printStackTrace();
         return super.handleConstraintViolationException(ex);
     }
 
     @Override
     protected ResponseEntity<ErrorDTO> handleMissingPartException(Exception ex) {
-        ex.printStackTrace();
         return super.handleMissingPartException(ex);
     }
 }

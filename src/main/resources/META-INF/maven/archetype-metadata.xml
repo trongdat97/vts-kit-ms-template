@@ -43,6 +43,9 @@ under the License.
         <include>README.md</include>
       </includes>
     </fileSet>
+    <fileSet filtered="true" packaged="false">
+      <directory>.screenshots</directory>
+    </fileSet>
   </fileSets>
 
 </archetype-descriptor>
