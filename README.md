@@ -149,7 +149,9 @@ String message = InternationalizationUtils.getMessage("msg.error.notFound")
 ```
 
 ### Prometheus metrics
-This Template built-in supported by `spring-boot-starter-aop` for monitoring.
+This Template built-in supported by `spring-boot-starter-actuator` for monitoring.
+
+`http://localhost:8080/<artifactId>/actuator/prometheus`
 
 ### Mapper
 By supported [Mapstruct](https://mapstruct.org/) built-in. Mapper binding become easy and quickly
