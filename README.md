@@ -33,7 +33,7 @@ Requirement
 
 Quick start
 -------
-* Create your new project from this template
+* Run this script to generate new project from this template
 ```shell script
 mvn archetype:generate -DarchetypeGroupId=com.atviettelsolutions -DarchetypeArtifactId=vts-kit-ms-template -DarchetypeVersion=1.0.0
 ```
@@ -122,7 +122,7 @@ public class BookController extends AbstractRestController {
 
 ### API Docs
 
-This Template Built-in supported Open API docs base on [Swagger OAS] (https://swagger.io/specification/)
+This Template Built-in supported Open API docs base on [Swagger OAS](https://swagger.io/specification/)
 
 API Docs Auto Generated at URL: `http://localhost:8080/<artifactId>/api-docs`
 
