@@ -13,7 +13,7 @@ jobs:
       sonarProjectKey: ${{ secrets.SONAR_PROJECT_KEY }}
       sonarJavaBinaries: .
       sonarSource: .
-      sonarInclusion: /vts-kit-ms-test/src/main/**/*.java
+      sonarInclusion: /src/main/**/*.java
       sonarExclusion: /*.zip,/*.jar,/*.html,/R.java,/build/,/target/,/.settings/,/.mvn/,/src/main/resources/static/bower_components/,/src/main/resources/static/jquery-validation/,/src/main/resources/static/scripts/material/,/src/main/resources/static/scripts/multiselect/,/src/main/resources/static/scripts/nanobar/,/src/main/resources/static/scripts/plugins/,/src/main/resources/static/scripts/utils/**
       sonarSkipTest: true
       sonarCoverageExclusion: '**/*.*'
@@ -54,9 +54,11 @@ jobs:
         with:
           java-version: 11
       - name: Extract Maven project version
+        working-directory: archetype
         run: echo ::set-output name=version::$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
         id: project
       - name: Build
+        working-directory: archetype
         run: mvn install
       - name: Generation Test Project
         run: mvn archetype:generate -B -DarchetypeGroupId=com.atviettelsolutions -DarchetypeArtifactId=vts-kit-ms-template -DarchetypeVersion=${{steps.project.outputs.pomVersion}} -DgroupId=com.atviettelsolutions -DartifactId=vts-kit-ms-test -Dversion=1.0.0
@@ -65,6 +67,7 @@ jobs:
           sed -i -e "s|<sonar.organization>\${env.SONAR_ORGANIZATION}</sonar.organization>|<sonar.organization>${{ secrets.SONAR_ORGANIZATION }}</sonar.organization>|g" pom.xml
       - name: Build and analyze (PR)
         if: github.event.workflow_run.event == 'pull_request'
+        working-directory: vts-kit-ms-test
         run: |
             mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
               -Dsonar.verbose=true \
