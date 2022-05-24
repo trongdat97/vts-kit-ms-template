@@ -18,7 +18,6 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/book")
 public class BookController extends AbstractRestController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(BookController.class);
 
     private BookService bookService;
 

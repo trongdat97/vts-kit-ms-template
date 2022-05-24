@@ -55,7 +55,7 @@ jobs:
           java-version: 11
       - name: Extract Maven project version
         working-directory: archetype
-        run: echo ::set-output name=version::$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
+        run: echo ::set-output name=pomVersion::$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
         id: project
       - name: Build
         working-directory: archetype

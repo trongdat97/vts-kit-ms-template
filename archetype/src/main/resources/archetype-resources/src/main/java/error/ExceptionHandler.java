@@ -17,6 +17,7 @@ public class ExceptionHandler extends AbstractExceptionHandler {
 
     @Override
     protected ResponseEntity<ErrorDTO> handleAccessDeniedException() {
+        // TODO: Override Here
         return super.handleAccessDeniedException();
     }
 
