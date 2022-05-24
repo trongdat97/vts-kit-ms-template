@@ -4,9 +4,6 @@ Archetype for generating a spring-boot service based on Spring Boot 2.6.6
 
 Quickly create your project by following the instructions [here](#quick-start)
 
-<b>Spring profiles</b>
-* `local`: Default. Use for Development on local enviroment
-* `docker`: Use for running on Docker or Kubernetes
 
 <b>Built-in Feature</b>
 * [Auto Generation Base Code Structure](#code-structure)
