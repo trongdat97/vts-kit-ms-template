@@ -1,6 +1,10 @@
-REST API Template Project Base on Spring Boot Framework
+VTS Kit Spring Boot Microservice Archetype
 -------
-The purpose of this template is to speed up the creation of new REST API Application and help keep the same standards across multiple teams. If you need to create a new app, you can simply use this one as a starting point and build on top of it.
+Archetype for generating a spring-boot service based on Spring Boot 2.6.6
+
+Spring profiles:
+* `local`: Default. Use for Development on local enviroment
+* `docker`: Use for running on Docker or Kubernetes
 
 Built-in Feature:
 * [Auto Generation Base Code Structure](#code-structure)
@@ -12,7 +16,8 @@ Built-in Feature:
 * [Auto Mapper supported](#mapper)
 * [Lombok supported](#lombok)
 * [Spring Validation supported](#validation)
-* [Common Exception Handling ](#exception-handler)
+* [Common Exception Handling](#exception-handler)
+* [Logging](https://github.com/vts-contributor/vts-kit-ms-logs-handler.git)
 
 Addition feature:
 * [Integration Maria DB](https://github.com/vts-contributor/vts-kit-ms-maria-data.git)
@@ -33,7 +38,7 @@ Requirement
 
 Quick start
 -------
-* Run this script to generate new project from this template
+* Run this script to generate new project from this archetype
 ```shell script
 mvn archetype:generate -DarchetypeGroupId=com.atviettelsolutions -DarchetypeArtifactId=vts-kit-ms-template -DarchetypeVersion=1.0.0
 ```
@@ -149,7 +154,7 @@ String message = InternationalizationUtils.getMessage("msg.error.notFound")
 ```
 
 ### Prometheus metrics
-This Template built-in supported by `spring-boot-starter-actuator` for monitoring.
+This Template built-in supported `spring-boot-starter-actuator` for monitoring.
 
 `http://localhost:8080/<artifactId>/actuator/prometheus`
 
@@ -246,6 +251,24 @@ public class ExceptionHandler extends AbstractExceptionHandler {
     }
 }
 ```
+
+Contribute
+-------
+#### Setting up the development environment
+* <b>IDE:</b> Eclipse, Intellij IDEA
+* <b>JDK:</b> >= JDK 8
+* <b>Maven:</b> >= 3.6.0
+* <b>Build:</b>
+```shell script
+# cd archetype directory
+cd archetype
+# build
+mvn clean install -DskipTests
+```
+#### Contribute Guidelines
+If you have any ideas, just open an issue and tell us what you think.
+
+If you'd like to contribute, please refer [Contributors Guide](CONTRIBUTING.md)
 
 License
 -------

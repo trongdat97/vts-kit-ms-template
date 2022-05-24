@@ -6,11 +6,14 @@ import com.viettel.vtskit.logs.AppLogService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.validation.ConstraintViolationException;
 
 @ControllerAdvice
 public class ExceptionHandler extends AbstractExceptionHandler {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionHandler.class);
 
     @Override
     protected ResponseEntity<ErrorDTO> handleAccessDeniedException() {

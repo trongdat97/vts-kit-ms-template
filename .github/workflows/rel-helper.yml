@@ -24,6 +24,7 @@ jobs:
             const tag = context.ref.replace('refs\/tags\/', '')
             core.exportVariable('tag', tag)
     - name: Publish
+      working-directory: archetype
       run: |
         mvn deploy \
           --settings .settings.xml \
