@@ -2,16 +2,17 @@ VTS Kit Spring Boot Microservice Archetype
 -------
 Archetype for generating a spring-boot service based on Spring Boot 2.6.6
 
-Spring profiles:
+Quickly create your project by following the instructions [here](#quick-start)
+
+<b>Spring profiles</b>
 * `local`: Default. Use for Development on local enviroment
 * `docker`: Use for running on Docker or Kubernetes
 
-Built-in Feature:
+<b>Built-in Feature</b>
 * [Auto Generation Base Code Structure](#code-structure)
 * [Auto Generation Example API](#api-example)
 * [Auto Generation API Docs](#api-docs)
 * [Internationalization supported](#internationalization)
-* [ELK Stack supported](#upload-multipartfile)
 * [Prometheus metrics supported](#prometheus-metric)
 * [Auto Mapper supported](#mapper)
 * [Lombok supported](#lombok)
@@ -19,7 +20,7 @@ Built-in Feature:
 * [Common Exception Handling](#exception-handler)
 * [Logging](https://github.com/vts-contributor/vts-kit-ms-logs-handler.git)
 
-Addition feature:
+<b>Addition feature</b>
 * [Integration Maria DB](https://github.com/vts-contributor/vts-kit-ms-maria-data.git)
 * [Integration Mongo DB](https://github.com/vts-contributor/vts-kit-ms-mongo-data.git)
 * [Integration MinIO](https://github.com/vts-contributor/vts-kit-ms-minio-integrated.git)
@@ -30,7 +31,7 @@ Addition feature:
 * [Excel Handler Utility](https://github.com/vts-contributor/vts-kit-ms-excel-handler.git)
 * [Redis Caching](https://github.com/vts-contributor/vts-kit-ms-redis-cache.git)
 
-Requirement
+<b>Requirement</b>
 -------
 * JDK >= 1.8
 * Maven >= 3.6.3
@@ -54,7 +55,7 @@ mvn clean package
 mvn clean package -DskipTests
 ```
 
-* Import Open API Docs URL To Testing Tool (Ex: Postman)
+* Import Open API Docs URL into API Testing Tool (Ex: Postman)
 
 `http://localhost:8080/<artifactId>/api-docs`
 
@@ -90,7 +91,6 @@ public class BookController extends AbstractRestController {
 
     @GetMapping("/view/getBookDetail/{bookId}")
     public ResponseEntity<Object> getBookDetail(@PathVariable("bookId") String bookId) {
-        AppLogs.info(LOGGER, "getBookDetail:" + bookId);
         BookDTO rsDelete = bookService.getBookDetail(bookId);
         if(rsDelete == null){
             return RestUtils.response404(InternationalizationUtils.getMessage("msg.error.notFound"));
@@ -109,7 +109,6 @@ public class BookController extends AbstractRestController {
 
     @PostMapping("/edit/deleteBook/{bookId}")
     public ResponseEntity<Object> deleteBook(@PathVariable("bookId") String bookId) {
-        AppLogs.info(LOGGER, "deleteBook:" + bookId);
         BookDTO rsDelete = bookService.deleteBook(bookId);
         if(rsDelete == null){
             return RestUtils.response404(InternationalizationUtils.getMessage("msg.error.notFound"));
@@ -156,7 +155,7 @@ String message = InternationalizationUtils.getMessage("msg.error.notFound")
 ### Prometheus metrics
 This Template built-in supported `spring-boot-starter-actuator` for monitoring.
 
-`http://localhost:8080/<artifactId>/actuator/prometheus`
+Endpoint: `http://localhost:8080/<artifactId>/actuator/prometheus`
 
 ### Mapper
 By supported [Mapstruct](https://mapstruct.org/) built-in. Mapper binding become easy and quickly
