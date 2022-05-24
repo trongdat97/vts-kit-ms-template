@@ -61,7 +61,7 @@ jobs:
         working-directory: archetype
         run: mvn install
       - name: Generation Test Project
-        run: mvn archetype:generate -B -DarchetypeGroupId=com.atviettelsolutions -DarchetypeArtifactId=vts-kit-ms-template -DarchetypeVersion=${{steps.project.outputs.pomVersion}} -DgroupId=com.atviettelsolutions -DartifactId=vts-kit-ms-test -Dversion=1.0.0
+        run: mvn archetype:generate -B -DarchetypeGroupId=com.atviettelsolutions -DarchetypeArtifactId=vts-kit-ms-template -DarchetypeVersion=${{steps.project.outputs.pomVersion}} -DgroupId=com.atviettelsolutions -DartifactId=vts-kit-ms-test -Dversion=${{steps.project.outputs.pomVersion}}
       - name: Build and analyze (PR)
         if: github.event.workflow_run.event == 'pull_request'
         working-directory: vts-kit-ms-test
