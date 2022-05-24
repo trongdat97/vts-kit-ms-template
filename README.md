@@ -69,6 +69,10 @@ mvn clean package -DskipTests
 
 Usage
 -------
+### Spring profiles
+* `local`: Default. Use for Development on local enviroment
+* `docker`: Use for running on Docker or Kubernetes
+
 ### Code Structure
 
 This Template Generated Code Structure base on MVC Pattern
