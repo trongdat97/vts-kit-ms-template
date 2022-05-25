@@ -16,11 +16,6 @@ public class ExceptionHandler extends AbstractExceptionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionHandler.class);
 
     @Override
-    protected ResponseEntity<ErrorDTO> handleAccessDeniedException() {
-        return super.handleAccessDeniedException();
-    }
-
-    @Override
     protected ResponseEntity<ErrorDTO> handleCommonException(Exception ex) {
         AppLogService.error(LOGGER, ex);
         return super.handleCommonException(ex);

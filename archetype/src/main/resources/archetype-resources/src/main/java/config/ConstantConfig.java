@@ -1,5 +1,8 @@
 package ${package}.config;
 
-public interface ConstantConfig {
+public class ConstantConfig {
+    private ConstantConfig() {}
 
+    public static final String MSG_KEY_NOT_FOUND = "msg.error.notFound";
+    
 }

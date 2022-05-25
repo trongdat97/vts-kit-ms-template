@@ -3,6 +3,7 @@ package ${package}.controller;
 import com.viettel.vtskit.common.rest.AbstractRestController;
 import com.viettel.vtskit.common.utils.InternationalizationUtils;
 import com.viettel.vtskit.common.utils.RestUtils;
+import ${package}.config.ConstantConfig;
 import ${package}.dto.BookDTO;
 import ${package}.dto.UpdateBookDTO;
 import ${package}.service.BookService;
@@ -28,7 +29,7 @@ public class BookController extends AbstractRestController {
     public ResponseEntity<Object> updateBook(@Valid @RequestBody UpdateBookDTO bookInfo) {
         BookDTO rsUpdate = bookService.updateBook(bookInfo);
         if(rsUpdate == null){
-            return RestUtils.response404(InternationalizationUtils.getMessage("msg.error.notFound"));
+            return RestUtils.response404(InternationalizationUtils.getMessage(ConstantConfig.MSG_KEY_NOT_FOUND));
         }
         return RestUtils.responseOk(rsUpdate);
     }
@@ -37,7 +38,7 @@ public class BookController extends AbstractRestController {
     public ResponseEntity<Object> deleteBook(@PathVariable("bookId") String bookId) {
         BookDTO rsDelete = bookService.deleteBook(bookId);
         if(rsDelete == null){
-            return RestUtils.response404(InternationalizationUtils.getMessage("msg.error.notFound"));
+            return RestUtils.response404(InternationalizationUtils.getMessage(ConstantConfig.MSG_KEY_NOT_FOUND));
         }
         return RestUtils.responseOk(rsDelete);
     }
@@ -46,7 +47,7 @@ public class BookController extends AbstractRestController {
     public ResponseEntity<Object> getBookDetail(@PathVariable("bookId") String bookId) {
         BookDTO rsDelete = bookService.getBookDetail(bookId);
         if(rsDelete == null){
-            return RestUtils.response404(InternationalizationUtils.getMessage("msg.error.notFound"));
+            return RestUtils.response404(InternationalizationUtils.getMessage(ConstantConfig.MSG_KEY_NOT_FOUND));
         }
         return RestUtils.responseOk(rsDelete);
     }
