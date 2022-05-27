@@ -1,6 +1,6 @@
 package ${package}.controller;
 
-import com.viettel.vtskit.common.rest.AbstractRestController;
+import com.viettel.vtskit.common.rest.BaseRestController;
 import com.viettel.vtskit.common.utils.InternationalizationUtils;
 import com.viettel.vtskit.common.utils.RestUtils;
 import ${package}.config.ConstantConfig;
@@ -16,7 +16,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/book")
-public class BookController extends AbstractRestController {
+public class BookController extends BaseRestController {
 
     private BookService bookService;
 

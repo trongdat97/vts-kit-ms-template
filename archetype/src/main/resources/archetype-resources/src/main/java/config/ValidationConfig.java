@@ -1,9 +1,9 @@
 package ${package}.config;
 
-import com.viettel.vtskit.common.config.AbstractValidationConfig;
+import com.viettel.vtskit.common.config.IValidationConfig;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class ValidationConfig extends AbstractValidationConfig {
+public class ValidationConfig implements IValidationConfig {
 
 }

@@ -1,6 +1,6 @@
 package ${package}.error;
 
-import com.viettel.vtskit.common.exception.AbstractExceptionHandler;
+import com.viettel.vtskit.common.exception.IExceptionHandler;
 import com.viettel.vtskit.common.rest.ErrorDTO;
 import com.viettel.vtskit.logs.AppLogService;
 import org.springframework.http.ResponseEntity;
@@ -12,30 +12,42 @@ import org.slf4j.LoggerFactory;
 import javax.validation.ConstraintViolationException;
 
 @ControllerAdvice
-public class ExceptionHandler extends AbstractExceptionHandler {
+public class ExceptionHandler implements IExceptionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionHandler.class);
 
     @Override
-    protected ResponseEntity<ErrorDTO> handleCommonException(Exception ex) {
+    public ResponseEntity<ErrorDTO> handleAccessDeniedException(AccessDeniedException ex) {
         AppLogService.error(LOGGER, ex);
-        return super.handleCommonException(ex);
+        return IExceptionHandler.super.handleAccessDeniedException(ex);
     }
 
     @Override
-    protected ResponseEntity<ErrorDTO> handleMethodArgumentException(MethodArgumentNotValidException ex) {
+    public ResponseEntity<ErrorDTO> handleAuthenticationException(AuthenticationException ex) {
         AppLogService.error(LOGGER, ex);
-        return super.handleMethodArgumentException(ex);
+        return IExceptionHandler.super.handleAuthenticationException(ex);
     }
 
     @Override
-    protected ResponseEntity<ErrorDTO> handleConstraintViolationException(ConstraintViolationException ex) {
+    public ResponseEntity<ErrorDTO> handleCommonException(Exception ex) {
         AppLogService.error(LOGGER, ex);
-        return super.handleConstraintViolationException(ex);
+        return IExceptionHandler.super.handleCommonException(ex);
     }
 
     @Override
-    protected ResponseEntity<ErrorDTO> handleMissingPartException(Exception ex) {
+    public ResponseEntity<ErrorDTO> handleMethodArgumentException(MethodArgumentNotValidException ex) {
         AppLogService.error(LOGGER, ex);
-        return super.handleMissingPartException(ex);
+        return IExceptionHandler.super.handleMethodArgumentException(ex);
+    }
+
+    @Override
+    public ResponseEntity<ErrorDTO> handleConstraintViolationException(ConstraintViolationException ex) {
+        AppLogService.error(LOGGER, ex);
+        return IExceptionHandler.super.handleConstraintViolationException(ex);
+    }
+
+    @Override
+    public ResponseEntity<ErrorDTO> handleMissingPartException(Exception ex) {
+        AppLogService.error(LOGGER, ex);
+        return IExceptionHandler.super.handleMissingPartException(ex);
     }
 }
