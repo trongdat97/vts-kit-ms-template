@@ -4,6 +4,8 @@ import com.viettel.vtskit.common.exception.IExceptionHandler;
 import com.viettel.vtskit.common.rest.ErrorDTO;
 import com.viettel.vtskit.logs.AppLogService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.slf4j.Logger;
