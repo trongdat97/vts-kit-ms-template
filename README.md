@@ -24,8 +24,7 @@ Quickly create your project by following the instructions [here](#quick-start)
 * [Integration Keycloak Auth](https://github.com/vts-contributor/vts-kit-ms-keycloak-auth.git)
 * [Integration Kafka](https://github.com/vts-contributor/vts-kit-ms-kafka-integrated.git)
 * [Integration Elasticsearch](https://github.com/vts-contributor/vts-kit-ms-elasticsearch-data.git)
-* [Integration Kong Ingress](//github.com/vts-contributor/vts-kit-ms-kong-gateway.git)
-* [Excel Handler Utility](https://github.com/vts-contributor/vts-kit-ms-excel-handler.git)
+* [Integration Kong Gateway](//github.com/vts-contributor/vts-kit-ms-kong-gateway.git)
 * [Redis Caching](https://github.com/vts-contributor/vts-kit-ms-redis-cache.git)
 
 <b>Requirement</b>
