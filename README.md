@@ -37,7 +37,7 @@ Quick start
 -------
 * Run this script to generate new project from this archetype
 ```shell script
-mvn archetype:generate -DarchetypeGroupId=com.atviettelsolutions -DarchetypeArtifactId=vts-kit-ms-template -DarchetypeVersion=1.0.0
+mvn archetype:generate -DarchetypeGroupId=com.atviettelsolutions -DarchetypeArtifactId=vts-kit-ms-template
 ```
 
 * Enter your project infomation (groupId, artifactId, package,...)
